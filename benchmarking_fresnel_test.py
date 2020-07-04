@@ -403,7 +403,7 @@ test_optsys=WFIRSTSPC(npix=512,ratio=0.25)
 
 
 #time = %timeit -o test_optsys.calc_psf(wavelength=wavelen, display_intermediates=False, return_intermediates=False)
-psf_timing = get_ipython().run_line_magic('prun', '-r  -s  tottime test_optsys.calc_psf(wavelength=wavelen, display_intermediates=False, return_intermediates=False)')
+#psf_timing = get_ipython().run_line_magic('prun', '-r  -s  tottime test_optsys.calc_psf(wavelength=wavelen, display_intermediates=False, return_intermediates=False)')
 
 
 # In[ ]:
@@ -493,7 +493,7 @@ for combo in scenarios:
     outname='cuda'+str(poppy.accel_math._USE_CUDA)+'NumExpr'+str(poppy.accel_math._USE_NUMEXPR)+'FFT'+str(poppy.accel_math._FFTW_AVAILABLE)+'.csv'
     df.to_csv(outname,float_format="%3.3e")
     print(outname)
-    psf_timing = get_ipython().run_line_magic('prun', '-r  -s  tottime test_optsys.calc_psf(display_intermediates=False, return_intermediates=False)')
+    #psf_timing = get_ipython().run_line_magic('prun', '-r  -s  tottime test_optsys.calc_psf(display_intermediates=False, return_intermediates=False)')
     psf_timing.print_stats()
     
 
@@ -612,8 +612,8 @@ print(x)
 # In[ ]:
 
 
-psf_timing = get_ipython().run_line_magic('prun', '-r  -s  tottime  WFIRSTSPC(npix=1024,ratio=0.25).calc_psf(display_intermediates=False, return_intermediates=False)')
-psf_timing.print_stats()
+#psf_timing = get_ipython().run_line_magic('prun', '-r  -s  tottime  WFIRSTSPC(npix=1024,ratio=0.25).calc_psf(display_intermediates=False, return_intermediates=False)')
+#psf_timing.print_stats()
 
 
 # In[ ]:
